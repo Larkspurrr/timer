@@ -34,8 +34,14 @@ function doneMenu() {
 function canActivate() {
     if (isActive == true) {
         start.disabled = true;
+        hours.disabled = true;
+        minutes.disabled = true;
+        seconds.disabled = true;
     } else if (isActive == false) {
         start.disabled = false;
+        hours.disabled = false;
+        minutes.disabled = false;
+        seconds.disabled = false;
     }
 }
 
@@ -71,15 +77,6 @@ start.addEventListener("click", () => {
     timerInterval = setInterval(begin, 1000);
     isActive = true;
     canActivate();
-    if (hours.value == null) {
-        hours.value = 0;
-    }
-    if (minutes.value == null) {
-        minutes.value = 0;
-    }
-    if (seconds.value == null) {
-        seconds.value = 0;
-    }
 })
 
 stop.addEventListener("click", () => {
