@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Timer</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body style="background-color: #1e3d58;">
+        <h1 class="text">Timer</h1>
+
+        <div id="colonBox">
+            <p class="text colon">:</p>
+            <p class="text colon">:</p>
+        </div>
+
+        <div id="inputBox">
+            <input type="number" name="hours" id="hours" class="input" min="0" max="59">
+            <input type="number" name="minutes" id="minutes" class="input" min="0" max="59">
+            <input type="number" name="seconds" id="seconds" class="input" min="0" max="59">
+        </div>
+
+        <div id="buttonBox">
+            <button id="start" class="button">Start</button>
+            <button id="stop" class="button">Stop</button>
+            <button id="clear" class="button">Clear</button>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>

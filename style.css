@@ -1,0 +1,77 @@
+.text{
+    color: #e8eef1;
+}
+
+h1 {
+    margin: 100px 590px;
+    font-size: 50px;
+}
+
+#buttonBox {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
+    margin: 180px 390px;
+}
+
+.button {
+    height: 75px;
+    width: 150px;
+    padding: 20px 20px;
+    font-size: 20px;
+    border: 5px solid #e8eef1;
+    border-radius: 10px;
+    background-color: #003f5c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    color: #057dcd;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #43b0f1;
+    color: #e8eef1;
+}
+
+
+
+#colonBox {
+    display: flex;
+    column-gap: 140px;
+    margin: 100px 560px;
+    white-space: nowrap;
+    height: 40px;
+}
+
+.colon {
+    font-size: 75px;
+}
+
+
+
+#inputBox {
+    display: flex;
+    column-gap: 50px;
+    margin: -80px 450px;
+}
+
+.input {
+    background-color: #1e3d58;
+    border-bottom: 3px solid #43b0f1;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    height: 75px;
+    width: 100px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e8eef1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
