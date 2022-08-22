@@ -75,3 +75,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+a {
+    color: #ffa600;
+}
+
+#stopwatchLink {
+    margin: -40px 640px;
+}
