@@ -77,15 +77,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-#stopwatchAnchor {
+#stopwatchLink {
     color: #ffa600;
 }
 
 #stopwatchLink {
     margin: -40px 640px;
-}
-
-#easterEgg {
-    color: #e8eef1;
-    text-decoration: none;
 }
