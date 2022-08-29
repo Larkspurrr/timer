@@ -7,7 +7,7 @@ let start = document.getElementById("start");
 let stop = document.getElementById("stop");
 let clear = document.getElementById("clear");
 
-let timerInterval, timerDoneInterval, isActive;
+let timerInterval, timerDoneInterval, isActive, i;
 let doneCounter = 0;
 
 
@@ -22,13 +22,13 @@ inputs.map(input => {
 function doneMenu() {
     doneCounter += 1;
     if (doneCounter % 2 == 1) {
-        hours.style.color = "red";
-        minutes.style.color = "red";
-        seconds.style.color = "red";
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].style.color = "red";
+        }
     } else if (doneCounter % 2 == 0) {
-        hours.style.color = "#e8eef1";
-        minutes.style.color = "#e8eef1";
-        seconds.style.color = "#e8eef1";
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].style.color = "#e8eef1";
+        }
     }
 }
 
@@ -75,6 +75,9 @@ function begin() {
 
 
 start.addEventListener("click", () => {
+    inputs.forEach(function(input) {
+        if (input.value == "") input.value = 0;
+    })
     timerInterval = setInterval(begin, 1000);
     isActive = true;
     canActivate();
@@ -84,6 +87,10 @@ stop.addEventListener("click", () => {
     isActive = false;
     canActivate();
     clearInterval(timerInterval);
+    clearInterval(timerDoneInterval);
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].style.color = "#e8eef1";
+    }
 })
 
 clear.addEventListener("click", () => {
@@ -91,9 +98,9 @@ clear.addEventListener("click", () => {
     canActivate();
     clearInterval(timerInterval);
     clearInterval(timerDoneInterval);
-    hours.style.color = "#e8eef1";
-    minutes.style.color = "#e8eef1";
-    seconds.style.color = "#e8eef1";
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].style.color = "#e8eef1";
+    }
     hours.value = 0;
     minutes.value = 0;
     seconds.value = 0;
