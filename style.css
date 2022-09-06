@@ -1,3 +1,7 @@
+body {
+    background-color: #1e3d58;
+}
+
 .text{
     color: #e8eef1;
 }
@@ -10,8 +14,8 @@ h1 {
 #buttonBox {
     display: grid;
     grid-template-columns: auto auto auto;
-    column-gap: 50px;
-    margin: 180px 390px;
+    column-gap: 80px;
+    margin: 180px 470px;
 }
 
 .button {
@@ -77,7 +81,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-#stopwatchLink {
+#stopwatchAnchor {
     color: #ffa600;
 }
 
