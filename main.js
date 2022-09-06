@@ -3,11 +3,11 @@ let hours = document.getElementById("hours");
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
 
-let start = document.getElementById("start");
-let stop = document.getElementById("stop");
+let startNstop = document.getElementById("startNstop");
 let clear = document.getElementById("clear");
 
-let timerInterval, timerDoneInterval, isActive, i;
+let timerInterval, timerDoneInterval, i;
+let isActive = false;
 let doneCounter = 0;
 
 
@@ -19,7 +19,7 @@ inputs.map(input => {
     })
 })
 
-function doneMenu() {
+function timerDone() {
     doneCounter += 1;
     if (doneCounter % 2 == 1) {
         for (i = 0; i < inputs.length; i++) {
@@ -34,12 +34,10 @@ function doneMenu() {
 
 function canActivate() {
     if (isActive == true) {
-        start.disabled = true;
         hours.disabled = true;
         minutes.disabled = true;
         seconds.disabled = true;
     } else if (isActive == false) {
-        start.disabled = false;
         hours.disabled = false;
         minutes.disabled = false;
         seconds.disabled = false;
@@ -50,7 +48,7 @@ function canActivate() {
 function begin() {
     if (hours.value == 0 && minutes.value == 0 && seconds.value == 0) {
         clearInterval(timerInterval);
-        timerDoneInterval = setInterval(doneMenu, 1000);
+        timerDoneInterval = setInterval(timerDone, 1000);
     } else if (hours.value == 0 && minutes.value >= 0 && seconds.value > 0) {
         seconds.value -= 1;
     } else if (hours.value > 0 && minutes.value == 0 && seconds.value == 0) {
@@ -74,22 +72,24 @@ function begin() {
 }
 
 
-start.addEventListener("click", () => {
-    inputs.forEach(function(input) {
-        if (input.value == "") input.value = 0;
-    })
-    timerInterval = setInterval(begin, 1000);
-    isActive = true;
-    canActivate();
-})
-
-stop.addEventListener("click", () => {
-    isActive = false;
-    canActivate();
-    clearInterval(timerInterval);
-    clearInterval(timerDoneInterval);
-    for (i = 0; i < inputs.length; i++) {
-        inputs[i].style.color = "#e8eef1";
+startNstop.addEventListener("click", () => {
+    if (isActive == false) {
+        inputs.forEach(function(input) {
+            if (input.value == "") input.value = 0;
+        })
+        timerInterval = setInterval(begin, 1000);
+        isActive = true;
+        canActivate();
+        startNstop.innerHTML = "Stop";
+    } else if (isActive == true) {
+        isActive = false;
+        canActivate();
+        clearInterval(timerInterval);
+        clearInterval(timerDoneInterval);
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].style.color = "#e8eef1";
+        }
+        startNstop.innerHTML = "Start";
     }
 })
 
