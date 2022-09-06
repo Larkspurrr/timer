@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Timer</title>
         <link rel="stylesheet" href="style.css">
-        <!-- Jesse P -->
     </head>
-    <body style="background-color: #1e3d58;">
+    <body>
         <h1 class="text">Timer</h1>
 
         <div id="colonBox">
@@ -16,18 +15,17 @@
         </div>
 
         <div id="inputBox">
-            <input type="number" name="hours" id="hours" class="input" min="0" max="59">
-            <input type="number" name="minutes" id="minutes" class="input" min="0" max="59">
-            <input type="number" name="seconds" id="seconds" class="input" min="0" max="59">
+            <input type="number" name="hours" id="hours" class="input" min="0" max="59" placeholder="0">
+            <input type="number" name="minutes" id="minutes" class="input" min="0" max="59" placeholder="0">
+            <input type="number" name="seconds" id="seconds" class="input" min="0" max="59" placeholder="0">
         </div>
 
         <div id="buttonBox">
-            <button id="start" class="button">Start</button>
-            <button id="stop" class="button">Stop</button>
-            <button id="clear" class="button">Clear</button>
+            <button id="startNstop" class="button" type="button">Start</button>
+            <button id="clear" class="button" type="button">Clear</button>
         </div>
 
-        <a href="https://larkspurrr.github.io/stopwatch/"><p id="stopwatchLink">Stopwatch</p></a>
+        <a href="https://larkspurrr.github.io/stopwatch/" id="stopwatchAnchor"><p id="stopwatchLink">Stopwatch</p></a>
     </body>
     <script src="main.js"></script>
 </html>
