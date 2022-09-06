@@ -78,9 +78,9 @@ startNstop.addEventListener("click", () => {
             if (input.value == "") input.value = 0;
         })
         timerInterval = setInterval(begin, 1000);
-        isActive = true;
         canActivate();
         startNstop.innerHTML = "Stop";
+        isActive = true;
     } else if (isActive == true) {
         isActive = false;
         canActivate();
