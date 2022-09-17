@@ -81,6 +81,8 @@ startNstop.addEventListener("click", () => {
         canActivate();
         startNstop.innerHTML = "Stop";
         isActive = true;
+        startNstop.style.backgroundColor = "#076675";
+        
     } else if (isActive == true) {
         isActive = false;
         canActivate();
@@ -90,6 +92,7 @@ startNstop.addEventListener("click", () => {
             inputs[i].style.color = "#e8eef1";
         }
         startNstop.innerHTML = "Start";
+        startNstop.style.backgroundColor = "#60dcd2";
     }
 })
 
